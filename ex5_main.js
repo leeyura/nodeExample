@@ -37,6 +37,7 @@ app.post('/main', function(req, res){
 
 // List & detail
 app.get(['/main', '/title/:id'], function(req, res){
+    // data title list.
 	fs.readdir('data',function(err, files){
 		if(err){
 			console.log(err)
@@ -44,6 +45,7 @@ app.get(['/main', '/title/:id'], function(req, res){
 		}
 			var id = req.params.id;
 			if(id){
+                // data content.
 				fs.readFile('data/'+id,'utf-8',function(err, data){
 					if(err){
 						console.log(err);
